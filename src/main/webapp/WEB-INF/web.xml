@@ -6,12 +6,12 @@
   <display-name>Archetype Created Web Application</display-name>
 
   <servlet>
-    <servlet-name>HelloServlet</servlet-name>
+    <servlet-name>OHLCDataServlet</servlet-name>
     <servlet-class>org.chapinhall.ohlc_plotter.HelloServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>HelloServlet</servlet-name>
-    <url-pattern>/servlet</url-pattern>
+    <servlet-name>OHLCDataServlet</servlet-name>
+    <url-pattern>/ohlc-data-servlet</url-pattern>
   </servlet-mapping>
 </web-app>

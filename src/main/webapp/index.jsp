@@ -1,5 +1,6 @@
 <html>
     <head>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
@@ -7,19 +8,14 @@
             Hello World!
         </h2>
 
-        <div>
-            <iframe height=900 width=900 src="servlet"></iframe>
-        </div>
+        <div height=400 width=700 id="plot-container"></div>
 
-        <div id="result"></div>
-
-        <!--
         <script>
             $(document).ready(function() {
-                $("#result").load("servlet #outdated");
+                $("#plot-container").load("ohlc-data-servlet");
             });
         </script>
-        -->
+
         <a href="servlet">Click to see servlet</a>
     </body>
 </html>
