@@ -7,7 +7,7 @@
 
   <servlet>
     <servlet-name>OHLCDataServlet</servlet-name>
-    <servlet-class>org.chapinhall.ohlc_plotter.HelloServlet</servlet-class>
+    <servlet-class>org.chapinhall.ohlc_plotter.PlotterServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>

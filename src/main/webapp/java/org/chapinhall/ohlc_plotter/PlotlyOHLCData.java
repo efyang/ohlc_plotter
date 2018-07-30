@@ -3,7 +3,7 @@ package org.chapinhall.ohlc_plotter;
 import java.util.Date;
 import java.util.UUID;
 
-public class PlotlyOHLCData {
+class PlotlyOHLCData {
     long[] close;
     long[] high;
     long[] low;
@@ -11,4 +11,8 @@ public class PlotlyOHLCData {
     Date[] x;
     String type = "candlestick";
     UUID uid;
+
+    PlotlyOHLCData() {
+        uid = UUID.randomUUID();
+    }
 }
