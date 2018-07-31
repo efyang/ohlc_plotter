@@ -9,7 +9,8 @@
             Hello World!
         </h2>
 
-        <div height=400 width=700 id="plot-container" class="plotly-graph-div"></div>
+        <div height=700 width=700 id="plot-container" class="plotly-graph-div"></div>
+        <div height=400 width=700 id="data"></div>
 
         <script>
             $(document).ready(function() {
@@ -17,15 +18,26 @@
                 $.getJSON("ohlc-data-servlet", function(json) {
                     plot_args = json;
                     plot_container = document.getElementById("plot-container");
-                    $(plot_container).html(JSON.stringify(plot_args, null, 2));
+                    $("#data").html(JSON.stringify(plot_args, null, 2));
                     $(plot_container).attr('id', plot_args.id);
 
                     // plot everything
                     window.plotlyenv=window.plotlyenv || {};window.plotlyenv.base_url="https://plot.ly";
+
+                    var marginSize = 20;
+                    var height = $(plot_container).height();
+                    var width = $(plot_container).width();
+                    var layout = {
+                        title: plot_args.title,
+                        width: width,
+                        height: height,
+                        autosize: false,
+                    }
+
                     Plotly.newPlot(plot_args.id,
                                    [plot_args.data],
-                                   {"title": plot_args.title},
-                                   {"showLink": plot_args.showLink});
+                                   {title: plot_args.title},
+                                   {showLink: plot_args.showLink});
                 })
             });
         </script>

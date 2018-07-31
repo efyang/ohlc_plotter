@@ -1,18 +1,20 @@
 package org.chapinhall.ohlc_plotter;
 
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.*;
 
 public class DataRow {
-    Date first;
-    ArrayList<Integer> second;
+    Calendar first;
+    Map<String, Integer> second;
 
     DataRow(Date first) {
-        new DataRow(first, new ArrayList<Integer>());
+        this.first = Calendar.getInstance();
+        this.first.setTime(first);
+        this.second = new HashMap<>();
     }
 
-    DataRow(Date first, ArrayList<Integer> second) {
-        this.first = first;
+    DataRow(Date first, Map<String, Integer> second) {
+        this.first = Calendar.getInstance();
+        this.first.setTime(first);
         this.second = second;
     }
 }
