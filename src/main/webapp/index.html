@@ -24,19 +24,19 @@
                     // plot everything
                     window.plotlyenv=window.plotlyenv || {};window.plotlyenv.base_url="https://plot.ly";
 
-                    var marginSize = 20;
-                    var height = $(plot_container).height();
-                    var width = $(plot_container).width();
                     var layout = {
                         title: plot_args.title,
-                        width: width,
-                        height: height,
-                        autosize: false,
+                        xaxis: {
+                            title: "Date"
+                        },
+                        yaxis: {
+                            title: "Net Entries (Entries - Exits)"
+                        }
                     }
 
                     Plotly.newPlot(plot_args.id,
                                    [plot_args.data],
-                                   {title: plot_args.title},
+                                   layout,
                                    {showLink: plot_args.showLink});
                 })
             });
