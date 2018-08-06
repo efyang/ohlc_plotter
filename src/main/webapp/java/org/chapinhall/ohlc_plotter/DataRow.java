@@ -9,7 +9,7 @@ public class DataRow {
     DataRow(Date first) {
         this.first = Calendar.getInstance();
         this.first.setTime(first);
-        this.second = new HashMap<>();
+        this.second = new HashMap<String, Integer>();
     }
 
     DataRow(Date first, Map<String, Integer> second) {

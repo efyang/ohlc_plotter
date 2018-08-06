@@ -23,7 +23,7 @@ class PlotlyOHLCData {
     }
 
     static ArrayList<Date> getDateColumn(List<DataRow> data) {
-        ArrayList<Date> dates = new ArrayList<>();
+        ArrayList<Date> dates = new ArrayList<Date>();
         for (DataRow row: data) {
             dates.add(row.first.getTime());
         }
@@ -31,7 +31,7 @@ class PlotlyOHLCData {
     }
 
     static ArrayList<Integer> getValueColumn(List<DataRow> data, String col) {
-        ArrayList<Integer> column = new ArrayList<>();
+        ArrayList<Integer> column = new ArrayList<Integer>();
         for (DataRow row: data) {
             column.add(row.second.get(col));
         }

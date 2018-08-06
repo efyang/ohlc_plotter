@@ -47,7 +47,7 @@ public class PlotterServlet extends HttpServlet {
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(SQL_QUERY_STRING);
 
-            List<DataRow> res = new ArrayList<>();
+            List<DataRow> res = new ArrayList<DataRow>();
             // iterate through results
             while (rs.next()) {
                 Date date = rs.getDate("DATE");
@@ -71,7 +71,7 @@ public class PlotterServlet extends HttpServlet {
             return r.nextInt(max - min + 1) + min;
         }
         private static List<DataRow> generateRandomData() {
-            List<DataRow> res = new ArrayList<>();
+            List<DataRow> res = new ArrayList<DataRow>();
             Calendar c = Calendar.getInstance();
             c.setTime(new Date());
             // generate 1000 weeks of data
@@ -102,7 +102,7 @@ public class PlotterServlet extends HttpServlet {
             // TBD?
             int initialValue = 0;
             // we assume that the entries are already in date-sorted order
-            List<DataRow> monthly = new ArrayList<>();
+            List<DataRow> monthly = new ArrayList<DataRow>();
             int prevMonth = -1;
             int prevMax = Integer.MIN_VALUE;
             int prevMin = Integer.MAX_VALUE;
